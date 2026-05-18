@@ -1,0 +1,43 @@
+{
+  "target": "Sequedad relativa en las proximas 24 horas: humedad_media < 14.0",
+  "features": [
+    "humedad_media",
+    "humedad_minima",
+    "humedad_maxima",
+    "humedad_delta",
+    "humedad_media_rolling_6h",
+    "temperatura_media",
+    "temperatura_minima",
+    "temperatura_maxima",
+    "bateria_v",
+    "panel_solar_v",
+    "hora",
+    "dia_semana"
+  ],
+  "records_used": 20280,
+  "train_records": 15210,
+  "test_records": 5070,
+  "positive_rate_train": 0.31439842209072977,
+  "positive_rate_test": 0.9859960552268244,
+  "accuracy": 0.9911242603550295,
+  "precision": 0.9997982243744956,
+  "recall": 0.9911982396479296,
+  "f1": 0.9954796584630838,
+  "confusion_matrix": [
+    [
+      70,
+      1
+    ],
+    [
+      44,
+      4955
+    ]
+  ],
+  "interpretation": {
+    "true_negative": "No predice alerta y no aparece sequedad en la ventana futura.",
+    "false_positive": "Predice alerta pero no aparece sequedad; es una falsa alarma.",
+    "false_negative": "No predice alerta pero aparece sequedad; es una alerta no detectada.",
+    "true_positive": "Predice alerta y aparece sequedad en la ventana futura.",
+    "limitations": "Modelo sencillo, dependiente del historico disponible y de reglas de sequedad definidas para el proyecto."
+  }
+}

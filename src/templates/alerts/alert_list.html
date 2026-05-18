@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% block title %}Alertas | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'sensor_import' %}">Importacion</a>
+            <a class="active" href="{% url 'alert_list' %}">Alertas</a>
+            <a href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a href="{% url 'users' %}">Usuarios</a>
+            <a href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Fase 4</p>
+                <h1>Alertas explicables</h1>
+                <p>Reglas deterministas para detectar sequedad relativa, energia baja y posibles anomalias.</p>
+            </div>
+            <div class="user-chip">{{ request.user.username }}</div>
+        </header>
+
+        <section class="metric-grid" aria-label="Resumen de alertas">
+            <article class="metric-card aqua">
+                <span>Total alertas</span>
+                <strong>{{ summary.total }}</strong>
+                <small>Generadas por reglas</small>
+            </article>
+            <article class="metric-card danger">
+                <span>Criticas</span>
+                <strong>{{ summary.critical }}</strong>
+                <small>Atencion prioritaria</small>
+            </article>
+            <article class="metric-card amber">
+                <span>Avisos</span>
+                <strong>{{ summary.warning }}</strong>
+                <small>Revision recomendada</small>
+            </article>
+            <article class="metric-card blue">
+                <span>Informativas</span>
+                <strong>{{ summary.info }}</strong>
+                <small>Contexto de calidad</small>
+            </article>
+        </section>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Reglas activas</h2>
+                    <span>Explicables</span>
+                </div>
+                <ul class="status-list">
+                    <li>Sequedad relativa: humedad media inferior al 14%.</li>
+                    <li>Sensor seco: humedad minima inferior al 8%.</li>
+                    <li>Subida brusca de humedad: aumento de al menos 8 puntos entre lecturas consecutivas cercanas.</li>
+                    <li>Caida brusca de humedad: descenso de al menos 8 puntos entre lecturas consecutivas cercanas.</li>
+                    <li>Temperatura alta: maxima superior a 32 C.</li>
+                    <li>Temperatura incoherente: diferencia maxima-minima superior a 18 C.</li>
+                    <li>Bateria baja: tension inferior a 6.2 V.</li>
+                    <li>Panel solar bajo: menos de 1.0 V entre las 10:00 y las 17:00.</li>
+                    <li>Sensor posiblemente bloqueado: humedad casi identica durante 8 lecturas seguidas.</li>
+                    <li>Hueco temporal: mas de 2 horas entre lecturas consecutivas.</li>
+                </ul>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Comando</h2>
+                    <span>Regenerable</span>
+                </div>
+                <p class="panel-copy">Las alertas se pueden recalcular tras importar datos nuevos.</p>
+                <code class="command-box">{{ generate_command }}</code>
+                <p class="panel-copy">El comando borra las alertas anteriores y las vuelve a crear desde las lecturas actuales.</p>
+            </article>
+        </section>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Distribucion por tipo</h2>
+                    <span>{{ summary.by_type|length }} tipos</span>
+                </div>
+                <div class="alert-type-list">
+                    {% for item in summary.by_type %}
+                        <div class="alert-type-row">
+                            <span>{{ item.label }}</span>
+                            <strong>{{ item.total }}</strong>
+                        </div>
+                    {% empty %}
+                        <p class="panel-copy">Todavia no hay alertas generadas.</p>
+                    {% endfor %}
+                </div>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Lectura</h2>
+                    <span>Criterio</span>
+                </div>
+                <p class="panel-copy">
+                    Estas alertas no son ordenes agronomicas. Sirven para priorizar revision y explicar que variable ha disparado cada aviso.
+                </p>
+            </article>
+        </section>
+
+        <section class="control-panel table-panel">
+            <div class="panel-heading">
+                <h2>Ultimas alertas</h2>
+                <span>{{ alerts|length }} visibles</span>
+            </div>
+            <div class="data-table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Nivel</th>
+                            <th>Tipo</th>
+                            <th>Variable</th>
+                            <th>Valor</th>
+                            <th>Descripcion</th>
+                            <th>Recomendacion</th>
+                            <th>Revision</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for alert in alerts %}
+                            <tr>
+                                <td>{{ alert.fecha|date:"d/m/Y H:i" }}</td>
+                                <td><span class="level-pill {{ alert.nivel }}">{{ alert.get_nivel_display }}</span></td>
+                                <td>{{ alert.get_tipo_display }}</td>
+                                <td>{{ alert.variable_afectada }}</td>
+                                <td>{{ alert.valor_detectado|floatformat:2 }}</td>
+                                <td>{{ alert.descripcion }}</td>
+                                <td>{{ alert.recomendacion_texto }}</td>
+                                <td>
+                                    <span class="level-pill {{ alert.estado_manual }}">{{ alert.get_estado_manual_display }}</span>
+                                    {% if alert.observaciones %}
+                                        <p class="table-note">{{ alert.observaciones|truncatechars:90 }}</p>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="row-actions vertical">
+                                        <a class="table-link" href="{% url 'alert_review' alert.pk %}">Revisar alerta</a>
+                                        <a class="table-link" href="{% url 'recommendation_create' %}?alert={{ alert.pk }}">Crear recomendacion</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="9">Ejecuta el comando de generacion para crear alertas.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}

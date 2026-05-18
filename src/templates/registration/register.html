@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Registro | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<main class="login-shell">
+    <section class="login-panel">
+        <div class="brand-mark">ADL</div>
+        <p class="eyebrow">Usuarios</p>
+        <h1>Crear cuenta</h1>
+        <p class="login-copy">
+            Registro con UserCreationForm oficial de Django. La contrasena se guarda con el hash estandar del framework.
+        </p>
+
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <label for="{{ form.username.id_for_label }}">Usuario</label>
+            {{ form.username }}
+            {{ form.username.errors }}
+            <label for="{{ form.password1.id_for_label }}">Contrasena</label>
+            {{ form.password1 }}
+            {{ form.password1.errors }}
+            <label for="{{ form.password2.id_for_label }}">Confirmar contrasena</label>
+            {{ form.password2 }}
+            {{ form.password2.errors }}
+            <button type="submit">Crear cuenta</button>
+        </form>
+        <p class="login-copy"><a class="table-link" href="{% url 'login' %}">Ya tengo cuenta</a></p>
+    </section>
+    <section class="signal-panel" aria-label="Registro AgroDataLab">
+        <div class="signal-grid">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="signal-card">
+            <strong>Autenticacion Django</strong>
+            <span>Login, logout, sesiones y hash de contrasenas gestionados por el framework.</span>
+        </div>
+    </section>
+</main>
+{% endblock %}

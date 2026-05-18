@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Usuarios | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'sensor_import' %}">Importacion</a>
+            <a href="{% url 'alert_list' %}">Alertas</a>
+            <a href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a class="active" href="{% url 'users' %}">Usuarios</a>
+            <a href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Usuarios</p>
+                <h1>Acceso y estado</h1>
+                <p>Gestion de acceso basada en el sistema oficial de autenticacion de Django.</p>
+            </div>
+            <a class="action-button" href="{% url 'register' %}">Registrar usuario</a>
+        </header>
+
+        <section class="metric-grid" aria-label="Resumen de usuarios">
+            <article class="metric-card aqua">
+                <span>Usuarios</span>
+                <strong>{{ users_count }}</strong>
+                <small>Cuentas registradas</small>
+            </article>
+            <article class="metric-card green">
+                <span>Activos</span>
+                <strong>{{ active_users_count }}</strong>
+                <small>Pueden acceder</small>
+            </article>
+            <article class="metric-card blue">
+                <span>Administradores</span>
+                <strong>{{ staff_users_count }}</strong>
+                <small>Staff Django</small>
+            </article>
+            <article class="metric-card amber">
+                <span>Mis recomendaciones</span>
+                <strong>{{ current_user_recommendations }}</strong>
+                <small>Creadas por {{ request.user.username }}</small>
+            </article>
+        </section>
+    </main>
+</div>
+{% endblock %}

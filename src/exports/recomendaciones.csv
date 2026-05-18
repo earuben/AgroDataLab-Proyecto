@@ -1,0 +1,401 @@
+titulo,descripcion,prioridad,estado,alerta_relacionada_id,alerta_tipo,creada_por,creada_en,actualizada_en
+Revisar panel solar bajo del 29/04/2026 14:00,"Alerta detectada: Panel solar bajo en horario diurno: 0.00 V.
+
+Accion recomendada con prudencia: Revisar orientacion, suciedad, sombra o posible desconexion del panel.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",media,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar humedad baja en sensor del 29/04/2026 14:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.32%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar panel solar bajo del 29/04/2026 13:00,"Alerta detectada: Panel solar bajo en horario diurno: 0.00 V.
+
+Accion recomendada con prudencia: Revisar orientacion, suciedad, sombra o posible desconexion del panel.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",media,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar humedad baja en sensor del 29/04/2026 13:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.33%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar panel solar bajo del 29/04/2026 12:00,"Alerta detectada: Panel solar bajo en horario diurno: 0.14 V.
+
+Accion recomendada con prudencia: Revisar orientacion, suciedad, sombra o posible desconexion del panel.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",media,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar humedad baja en sensor del 29/04/2026 12:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.32%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar panel solar bajo del 29/04/2026 11:00,"Alerta detectada: Panel solar bajo en horario diurno: 0.23 V.
+
+Accion recomendada con prudencia: Revisar orientacion, suciedad, sombra o posible desconexion del panel.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",media,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar humedad baja en sensor del 29/04/2026 11:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.31%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar panel solar bajo del 29/04/2026 10:00,"Alerta detectada: Panel solar bajo en horario diurno: 0.00 V.
+
+Accion recomendada con prudencia: Revisar orientacion, suciedad, sombra o posible desconexion del panel.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",media,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar humedad baja en sensor del 29/04/2026 10:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.31%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar panel solar bajo del 29/04/2026 09:00,"Alerta detectada: Panel solar bajo en horario diurno: 0.00 V.
+
+Accion recomendada con prudencia: Revisar orientacion, suciedad, sombra o posible desconexion del panel.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",media,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar humedad baja en sensor del 29/04/2026 09:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.31%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:41:50.852025+00:00,2026-05-05T15:41:50.852025+00:00
+Revisar panel solar bajo del 29/04/2026 08:00,"Alerta detectada: Panel solar bajo en horario diurno: 0.00 V.
+
+Accion recomendada con prudencia: Revisar orientacion, suciedad, sombra o posible desconexion del panel.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",media,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 08:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.30%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 07:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.29%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 06:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.30%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 05:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.31%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 04:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.34%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 03:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.34%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 02:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.31%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 01:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.29%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 29/04/2026 00:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.31%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 28/04/2026 23:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.31%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar humedad baja en sensor del 28/04/2026 22:00,"Alerta detectada: Al menos un sensor registra humedad muy baja: 1.31%.
+
+Accion recomendada con prudencia: Comprobar el sensor afectado y comparar con el resto de profundidades antes de tomar decisiones.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",alta,pendiente,,,,2026-05-05T15:42:00.346966+00:00,2026-05-05T15:42:00.346966+00:00
+Revisar sequedad relativa del 29/04/2026 14:00,"Alerta detectada: Humedad media baja: 2.70%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-05T15:42:45.266393+00:00,2026-05-05T15:42:45.266393+00:00
+Revisar sequedad relativa del 29/04/2026 13:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-05T15:42:45.266393+00:00,2026-05-05T15:42:45.266393+00:00
+Revisar sequedad relativa del 29/04/2026 12:00,"Alerta detectada: Humedad media baja: 2.67%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-05T15:42:45.266393+00:00,2026-05-05T15:42:45.266393+00:00
+Revisar sequedad relativa del 29/04/2026 11:00,"Alerta detectada: Humedad media baja: 2.66%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-05T15:42:45.266393+00:00,2026-05-05T15:42:45.266393+00:00
+Revisar sequedad relativa del 29/04/2026 10:00,"Alerta detectada: Humedad media baja: 2.66%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-05T15:42:45.266393+00:00,2026-05-05T15:42:45.266393+00:00
+Revisar sequedad relativa del 29/04/2026 09:00,"Alerta detectada: Humedad media baja: 2.67%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-05T15:42:45.266393+00:00,2026-05-05T15:42:45.267393+00:00
+Revisar sequedad relativa del 29/04/2026 14:00,"Alerta detectada: Humedad media baja: 2.70%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 13:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 12:00,"Alerta detectada: Humedad media baja: 2.67%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 11:00,"Alerta detectada: Humedad media baja: 2.66%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 10:00,"Alerta detectada: Humedad media baja: 2.66%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 09:00,"Alerta detectada: Humedad media baja: 2.67%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 08:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 07:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 06:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 05:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 04:00,"Alerta detectada: Humedad media baja: 2.70%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 03:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 02:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 01:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 00:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 23:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 22:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 21:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 20:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 19:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 18:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 17:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 16:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 15:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 28/04/2026 14:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,,,,2026-05-12T15:19:41.007050+00:00,2026-05-12T15:19:41.007050+00:00
+Revisar sequedad relativa del 29/04/2026 14:00,"Alerta detectada: Humedad media baja: 2.70%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84355,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 13:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84352,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 12:00,"Alerta detectada: Humedad media baja: 2.67%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84349,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 11:00,"Alerta detectada: Humedad media baja: 2.66%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84346,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 10:00,"Alerta detectada: Humedad media baja: 2.66%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84343,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 09:00,"Alerta detectada: Humedad media baja: 2.67%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84340,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 08:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84337,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 07:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84335,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 06:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84333,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 05:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84331,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 04:00,"Alerta detectada: Humedad media baja: 2.70%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84329,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 03:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84327,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 02:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84325,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 01:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84323,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 29/04/2026 00:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84321,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 23:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84319,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 22:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84317,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 21:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84315,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 20:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84313,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 19:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84311,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 18:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84309,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 17:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84305,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 16:00,"Alerta detectada: Humedad media baja: 2.68%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84303,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 15:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84300,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00
+Revisar sequedad relativa del 28/04/2026 14:00,"Alerta detectada: Humedad media baja: 2.69%.
+
+Accion recomendada con prudencia: Contrastar con la tendencia reciente y revisar si conviene planificar riego o inspeccion de campo.
+
+Antes de ejecutar una actuacion en campo, contrastar con lecturas cercanas, estado del sensor y criterio tecnico.",urgente,pendiente,84295,sequedad_relativa,,2026-05-12T16:03:05.049136+00:00,2026-05-12T16:03:05.049136+00:00

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Acerca | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'sensor_import' %}">Importacion</a>
+            <a href="{% url 'alert_list' %}">Alertas</a>
+            <a href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a href="{% url 'users' %}">Usuarios</a>
+            <a class="active" href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Acerca del proyecto</p>
+                <h1>AgroDataLab EnviroPro</h1>
+                <p>Proyecto final centrado en analisis de datos, alertas, recomendaciones y prediccion de sequedad relativa.</p>
+            </div>
+            <div class="user-chip">{{ request.user.username }}</div>
+        </header>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Alcance obligatorio</h2>
+                    <span>Django + datos</span>
+                </div>
+                <ul class="status-list">
+                    <li>Dataset EnviroPro limpio y combinado de 2024 a 2026.</li>
+                    <li>Dashboard privado con indicadores principales y graficos.</li>
+                    <li>Alertas explicables y recomendaciones gestionadas con CRUD.</li>
+                    <li>Modelo de clasificacion para sequedad relativa futura.</li>
+                    <li>Exportacion de resultados para informe y entrega.</li>
+                </ul>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Limites</h2>
+                    <span>Defendible</span>
+                </div>
+                <p class="panel-copy">
+                    IFAPA-RIA queda fuera de Django y solo se contempla como ampliacion opcional en informe o notebook.
+                    Las alertas son reglas de apoyo a revision, no instrucciones agronomicas definitivas.
+                </p>
+            </article>
+        </section>
+    </main>
+</div>
+{% endblock %}

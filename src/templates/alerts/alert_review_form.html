@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Revisar alerta | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'sensor_import' %}">Importacion</a>
+            <a class="active" href="{% url 'alert_list' %}">Alertas</a>
+            <a href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a href="{% url 'users' %}">Usuarios</a>
+            <a href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Revision manual</p>
+                <h1>{{ alert.get_tipo_display }}</h1>
+                <p>{{ alert.fecha|date:"d/m/Y H:i" }} - {{ alert.get_nivel_display }}</p>
+            </div>
+            <a class="action-button ghost" href="{% url 'alert_list' %}">Volver</a>
+        </header>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Alerta</h2>
+                    <span>{{ alert.regla }}</span>
+                </div>
+                <dl class="summary-list">
+                    <div>
+                        <dt>Variable</dt>
+                        <dd>{{ alert.variable_afectada }}</dd>
+                    </div>
+                    <div>
+                        <dt>Valor detectado</dt>
+                        <dd>{{ alert.valor_detectado|floatformat:2 }}</dd>
+                    </div>
+                    <div>
+                        <dt>Estado actual</dt>
+                        <dd>{{ alert.get_estado_manual_display }}</dd>
+                    </div>
+                </dl>
+                <p class="detail-copy">{{ alert.descripcion }}</p>
+                <p class="panel-copy">{{ alert.recomendacion_texto }}</p>
+            </article>
+
+            <article class="control-panel form-panel">
+                <div class="panel-heading">
+                    <h2>Observacion</h2>
+                    <span>Dia concreto</span>
+                </div>
+                <form method="post" class="data-form">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {% for field in form %}
+                        <div class="form-field">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
+                            {{ field.errors }}
+                        </div>
+                    {% endfor %}
+                    <button class="action-button" type="submit">Guardar revision</button>
+                </form>
+            </article>
+        </section>
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle recomendacion | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'sensor_import' %}">Importacion</a>
+            <a href="{% url 'alert_list' %}">Alertas</a>
+            <a class="active" href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a href="{% url 'users' %}">Usuarios</a>
+            <a href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Detalle</p>
+                <h1>{{ recommendation.titulo }}</h1>
+                <p>{{ recommendation.get_prioridad_display }} · {{ recommendation.get_estado_display }}</p>
+            </div>
+            <div class="header-actions">
+                <a class="action-button ghost" href="{% url 'recommendation_list' %}">Volver</a>
+                {% if recommendation.estado != "aplicada" %}
+                    <form method="post" action="{% url 'recommendation_mark_reviewed' recommendation.pk %}">
+                        {% csrf_token %}
+                        <button class="action-button" type="submit">Marcar revisada</button>
+                    </form>
+                {% endif %}
+                <a class="action-button" href="{% url 'recommendation_update' recommendation.pk %}">Editar</a>
+            </div>
+        </header>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Descripcion</h2>
+                    <span>Registro</span>
+                </div>
+                <p class="detail-copy">{{ recommendation.descripcion }}</p>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Contexto</h2>
+                    <span>Relacion</span>
+                </div>
+                <dl class="summary-list">
+                    <div>
+                        <dt>Creada por</dt>
+                        <dd>{{ recommendation.creada_por|default:"No registrado" }}</dd>
+                    </div>
+                    <div>
+                        <dt>Creada</dt>
+                        <dd>{{ recommendation.creada_en|date:"d/m/Y H:i" }}</dd>
+                    </div>
+                    <div>
+                        <dt>Actualizada</dt>
+                        <dd>{{ recommendation.actualizada_en|date:"d/m/Y H:i" }}</dd>
+                    </div>
+                </dl>
+            </article>
+        </section>
+
+        {% if recommendation.alerta_relacionada %}
+            <section class="control-panel table-panel">
+                <div class="panel-heading">
+                    <h2>Alerta relacionada</h2>
+                    <span>{{ recommendation.alerta_relacionada.get_nivel_display }}</span>
+                </div>
+                <p class="panel-copy">{{ recommendation.alerta_relacionada.descripcion }}</p>
+                <p class="panel-copy">{{ recommendation.alerta_relacionada.recomendacion_texto }}</p>
+            </section>
+        {% endif %}
+    </main>
+</div>
+{% endblock %}

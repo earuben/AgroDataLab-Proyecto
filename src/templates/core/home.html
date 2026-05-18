@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<main class="login-shell">
+    <section class="login-panel">
+        <div class="brand-mark">ADL</div>
+        <p class="eyebrow">Proyecto final EnviroPro</p>
+        <h1>AgroDataLab Web</h1>
+        <p class="login-copy">
+            Aplicacion Django para explorar lecturas EnviroPro, generar alertas explicables,
+            gestionar recomendaciones y preparar un modelo predictivo de sequedad relativa.
+        </p>
+        <div class="header-actions">
+            {% if request.user.is_authenticated %}
+                <a class="action-button" href="{% url 'dashboard' %}">Abrir dashboard</a>
+            {% else %}
+                <a class="action-button" href="{% url 'login' %}">Entrar</a>
+                <a class="action-button ghost" href="{% url 'register' %}">Registro</a>
+            {% endif %}
+        </div>
+    </section>
+    <section class="signal-panel" aria-label="Resumen del proyecto">
+        <div class="signal-grid">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="signal-card">
+            <strong>Datos reales 2024-2026</strong>
+            <span>Dashboard, importacion, alertas, recomendaciones y analisis reproducible.</span>
+        </div>
+    </section>
+</main>
+{% endblock %}

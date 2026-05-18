@@ -1,0 +1,346 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a class="active" href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'sensor_import' %}">Importacion</a>
+            <a href="{% url 'alert_list' %}">Alertas</a>
+            <a href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a href="{% url 'users' %}">Usuarios</a>
+            <a href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Fase 6</p>
+                <h1>AgroDataLab Web</h1>
+                <p>Centro operativo con lecturas, alertas explicables y seguimiento de recomendaciones.</p>
+            </div>
+            <div class="user-chip">{{ request.user.username }}</div>
+        </header>
+
+        <section class="metric-grid" aria-label="Indicadores principales">
+            {% for card in sensor_cards %}
+                <article class="metric-card {{ card.tone }}">
+                    <span>{{ card.label }}</span>
+                    <strong>{{ card.value }}</strong>
+                    <small>{{ card.hint }}</small>
+                </article>
+            {% endfor %}
+        </section>
+
+        <section class="control-grid">
+            <article class="control-panel wide">
+                <div class="panel-heading">
+                    <h2>Ultimas 72 lecturas</h2>
+                    <span class="chart-range">
+                        {{ timeline.labels.start|date:"d/m H:i"|default:"Sin datos" }}
+                        -
+                        {{ timeline.labels.end|date:"d/m H:i"|default:"Sin datos" }}
+                    </span>
+                </div>
+                <p class="chart-explainer">
+                    Tendencia normalizada: cada linea se escala entre su minimo y maximo de las ultimas 72 lecturas para comparar cambios, no valores absolutos.
+                </p>
+                <div class="chart-card">
+                    <svg class="line-chart" viewBox="0 0 100 100" preserveAspectRatio="none" role="img" aria-label="Evolucion reciente de humedad, temperatura y bateria">
+                        <line x1="0" y1="15" x2="100" y2="15"></line>
+                        <line x1="0" y1="40" x2="100" y2="40"></line>
+                        <line x1="0" y1="65" x2="100" y2="65"></line>
+                        <line x1="0" y1="90" x2="100" y2="90"></line>
+                        {% if timeline.humidity_points %}
+                            <polyline class="series humidity" points="{{ timeline.humidity_points }}"></polyline>
+                        {% endif %}
+                        {% if timeline.temperature_points %}
+                            <polyline class="series temperature" points="{{ timeline.temperature_points }}"></polyline>
+                        {% endif %}
+                        {% if timeline.battery_points %}
+                            <polyline class="series battery" points="{{ timeline.battery_points }}"></polyline>
+                        {% endif %}
+                        {% if timeline.solar_points %}
+                            <polyline class="series solar" points="{{ timeline.solar_points }}"></polyline>
+                        {% endif %}
+                    </svg>
+                    <div class="chart-legend">
+                        <span class="legend-dot humidity"></span> Humedad
+                        <span class="legend-dot temperature"></span> Temperatura
+                        <span class="legend-dot battery"></span> Bateria
+                        <span class="legend-dot solar"></span> Panel solar
+                    </div>
+                    <div class="chart-stats">
+                        <div>
+                            <span>Humedad</span>
+                            <strong>{{ timeline.stats.humidity.last }}</strong>
+                            <small>Min {{ timeline.stats.humidity.min }} / Max {{ timeline.stats.humidity.max }}</small>
+                        </div>
+                        <div>
+                            <span>Temp.</span>
+                            <strong>{{ timeline.stats.temperature.last }}</strong>
+                            <small>Min {{ timeline.stats.temperature.min }} / Max {{ timeline.stats.temperature.max }}</small>
+                        </div>
+                        <div>
+                            <span>Bateria</span>
+                            <strong>{{ timeline.stats.battery.last }}</strong>
+                            <small>Min {{ timeline.stats.battery.min }} / Max {{ timeline.stats.battery.max }}</small>
+                        </div>
+                        <div>
+                            <span>Solar</span>
+                            <strong>{{ timeline.stats.solar.last }}</strong>
+                            <small>Min {{ timeline.stats.solar.min }} / Max {{ timeline.stats.solar.max }}</small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Resumen de serie</h2>
+                    <span>{{ summary.total|default:0 }} registros</span>
+                </div>
+                <dl class="summary-list">
+                    <div>
+                        <dt>Primera lectura</dt>
+                        <dd>{{ summary.first_reading|date:"d/m/Y H:i"|default:"Pendiente" }}</dd>
+                    </div>
+                    <div>
+                        <dt>Ultima lectura</dt>
+                        <dd>{{ summary.last_reading|date:"d/m/Y H:i"|default:"Pendiente" }}</dd>
+                    </div>
+                    <div>
+                        <dt>Panel solar medio</dt>
+                        <dd>{{ summary.solar_avg|floatformat:2|default:"Pendiente" }} V</dd>
+                    </div>
+                    <div>
+                        <dt>Panel solar maximo</dt>
+                        <dd>{{ summary.solar_max|floatformat:2|default:"Pendiente" }} V</dd>
+                    </div>
+                </dl>
+            </article>
+        </section>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Humedad por sensor</h2>
+                    <span>Media global</span>
+                </div>
+                <div class="bar-list">
+                    {% for item in humidity_sensor_bars %}
+                        <div class="bar-row">
+                            <span>{{ item.label }}</span>
+                            <div class="bar-track"><div class="bar-fill humidity" style="width: {{ item.width|floatformat:0 }}%"></div></div>
+                            <strong>{{ item.value|floatformat:1 }}%</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Temperatura por sensor</h2>
+                    <span>Media global</span>
+                </div>
+                <div class="bar-list">
+                    {% for item in temperature_sensor_bars %}
+                        <div class="bar-row">
+                            <span>{{ item.label }}</span>
+                            <div class="bar-track"><div class="bar-fill temperature" style="width: {{ item.width|floatformat:0 }}%"></div></div>
+                            <strong>{{ item.value|floatformat:1 }} C</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+        </section>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Indicadores obligatorios</h2>
+                    <span>PDF</span>
+                </div>
+                <dl class="summary-list">
+                    {% for label, value in required_indicators %}
+                        <div>
+                            <dt>{{ label }}</dt>
+                            <dd>{{ value|date:"d/m/Y H:i"|default:value }}</dd>
+                        </div>
+                    {% endfor %}
+                    <div>
+                        <dt>Ultima recomendacion generada</dt>
+                        <dd>
+                            {% if latest_recommendation %}
+                                {{ latest_recommendation.titulo }}
+                            {% else %}
+                                Pendiente
+                            {% endif %}
+                        </dd>
+                    </div>
+                </dl>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Alertas clave</h2>
+                    <span>{{ alert_summary.total }} alertas</span>
+                </div>
+                <dl class="summary-list">
+                    <div>
+                        <dt>Sequedad</dt>
+                        <dd>{{ alert_summary.dryness_count }}</dd>
+                    </div>
+                    <div>
+                        <dt>Energeticas</dt>
+                        <dd>{{ alert_summary.energy_count }}</dd>
+                    </div>
+                    <div>
+                        <dt>Temperatura incoherente</dt>
+                        <dd>{{ alert_summary.incoherent_temperature_count }}</dd>
+                    </div>
+                </dl>
+            </article>
+        </section>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Ultimas lecturas</h2>
+                    <span>{{ latest_records|length }} registros</span>
+                </div>
+                <div class="data-table-wrap">
+                    <table class="data-table compact-table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Humedad</th>
+                                <th>Temp.</th>
+                                <th>Bateria</th>
+                                <th>Solar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for record in latest_records %}
+                                <tr>
+                                    <td>{{ record.fecha_hora|date:"d/m/Y H:i" }}</td>
+                                    <td>{{ record.humedad_media|floatformat:2 }}%</td>
+                                    <td>{{ record.temperatura_media|floatformat:2 }} C</td>
+                                    <td>{{ record.bateria_v|floatformat:2 }} V</td>
+                                    <td>{{ record.panel_solar_v|floatformat:2 }} V</td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="5">No hay datos importados.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Estado de fase</h2>
+                    <span>{{ alert_summary.total }} alertas</span>
+                </div>
+                <ul class="status-list">
+                    {% for item in phase_items %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </article>
+        </section>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Alertas prioritarias</h2>
+                    <a class="panel-link" href="{% url 'alert_list' %}">Ver todas</a>
+                </div>
+                <div class="stack-list">
+                    {% for alert in recent_alerts %}
+                        <div class="stack-item">
+                            <div>
+                                <strong>{{ alert.get_tipo_display }}</strong>
+                                <span>{{ alert.fecha|date:"d/m/Y H:i" }} · {{ alert.descripcion }}</span>
+                            </div>
+                            <span class="level-pill {{ alert.nivel }}">{{ alert.get_nivel_display }}</span>
+                        </div>
+                    {% empty %}
+                        <p class="panel-copy">No hay alertas generadas todavia.</p>
+                    {% endfor %}
+                </div>
+            </article>
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Recomendaciones abiertas</h2>
+                    <a class="panel-link" href="{% url 'recommendation_list' %}">Gestionar</a>
+                </div>
+                <dl class="summary-list">
+                    <div>
+                        <dt>Total</dt>
+                        <dd>{{ recommendation_summary.total }}</dd>
+                    </div>
+                    <div>
+                        <dt>Abiertas</dt>
+                        <dd>{{ recommendation_summary.open }}</dd>
+                    </div>
+                    <div>
+                        <dt>Urgentes</dt>
+                        <dd>{{ recommendation_summary.urgent }}</dd>
+                    </div>
+                    <div>
+                        <dt>Aplicadas</dt>
+                        <dd>{{ recommendation_summary.done }}</dd>
+                    </div>
+                </dl>
+            </article>
+        </section>
+
+        <section class="control-panel table-panel">
+            <div class="panel-heading">
+                <h2>Ultimas recomendaciones</h2>
+                <a class="panel-link" href="{% url 'recommendation_create' %}">Nueva</a>
+            </div>
+            <div class="data-table-wrap">
+                <table class="data-table compact-table">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Prioridad</th>
+                            <th>Estado</th>
+                            <th>Actualizada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for recommendation in recent_recommendations %}
+                            <tr>
+                                <td><a class="table-link" href="{% url 'recommendation_detail' recommendation.pk %}">{{ recommendation.titulo }}</a></td>
+                                <td><span class="level-pill priority-{{ recommendation.prioridad }}">{{ recommendation.get_prioridad_display }}</span></td>
+                                <td>{{ recommendation.get_estado_display }}</td>
+                                <td>{{ recommendation.actualizada_en|date:"d/m/Y H:i" }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="4">No hay recomendaciones registradas.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}

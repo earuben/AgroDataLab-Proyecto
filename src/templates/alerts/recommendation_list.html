@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Recomendaciones | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'sensor_import' %}">Importacion</a>
+            <a href="{% url 'alert_list' %}">Alertas</a>
+            <a class="active" href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a href="{% url 'users' %}">Usuarios</a>
+            <a href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Fase 5</p>
+                <h1>Recomendaciones</h1>
+                <p>CRUD privado para registrar acciones prudentes vinculadas o no a alertas.</p>
+            </div>
+            <a class="action-button" href="{% url 'recommendation_create' %}">Nueva recomendacion</a>
+        </header>
+
+        <section class="metric-grid" aria-label="Resumen de recomendaciones">
+            <article class="metric-card aqua">
+                <span>Total</span>
+                <strong>{{ summary.total }}</strong>
+                <small>Recomendaciones registradas</small>
+            </article>
+            <article class="metric-card amber">
+                <span>Abiertas</span>
+                <strong>{{ summary.open }}</strong>
+                <small>Pendientes o en revision</small>
+            </article>
+            <article class="metric-card danger">
+                <span>Urgentes</span>
+                <strong>{{ summary.urgent }}</strong>
+                <small>Prioridad maxima</small>
+            </article>
+            <article class="metric-card green">
+                <span>Revisadas</span>
+                <strong>{{ summary.done }}</strong>
+                <small>Cerradas como revisadas</small>
+            </article>
+        </section>
+
+        <section class="control-panel table-panel">
+            <div class="panel-heading">
+                <h2>Sugerencias desde alertas</h2>
+                <span>Opcional</span>
+            </div>
+            <p class="panel-copy">Crea recomendaciones iniciales desde alertas criticas o de aviso que aun no tengan recomendacion vinculada.</p>
+            <code class="command-box">{{ suggest_command }}</code>
+        </section>
+
+        <section class="control-panel table-panel">
+            <div class="panel-heading">
+                <h2>Listado</h2>
+                <span>{{ recommendations|length }} visibles</span>
+            </div>
+            <div class="data-table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Prioridad</th>
+                            <th>Estado</th>
+                            <th>Alerta</th>
+                            <th>Actualizada</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for recommendation in recommendations %}
+                            <tr>
+                                <td><a class="table-link" href="{% url 'recommendation_detail' recommendation.pk %}">{{ recommendation.titulo }}</a></td>
+                                <td><span class="level-pill priority-{{ recommendation.prioridad }}">{{ recommendation.get_prioridad_display }}</span></td>
+                                <td>{{ recommendation.get_estado_display }}</td>
+                                <td>
+                                    {% if recommendation.alerta_relacionada %}
+                                        {{ recommendation.alerta_relacionada.get_tipo_display }}
+                                    {% else %}
+                                        Sin alerta
+                                    {% endif %}
+                                </td>
+                                <td>{{ recommendation.actualizada_en|date:"d/m/Y H:i" }}</td>
+                                <td class="row-actions">
+                                    <a href="{% url 'recommendation_update' recommendation.pk %}">Editar</a>
+                                    {% if recommendation.estado != "aplicada" %}
+                                        <form method="post" action="{% url 'recommendation_mark_reviewed' recommendation.pk %}">
+                                            {% csrf_token %}
+                                            <button class="link-button" type="submit">Marcar revisada</button>
+                                        </form>
+                                    {% endif %}
+                                    <a href="{% url 'recommendation_delete' recommendation.pk %}">Eliminar</a>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="6">Todavia no hay recomendaciones. Crea la primera desde el boton superior.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}

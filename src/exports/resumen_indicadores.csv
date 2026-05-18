@@ -1,0 +1,16 @@
+indicador,valor
+total,20281
+first_reading,2024-01-01T15:00:00+00:00
+last_reading,2026-04-29T14:00:00+00:00
+humidity_avg,17.594666788173775
+humidity_min,0.0
+humidity_max,119.49
+temperature_avg,18.339251824367636
+temperature_min,-5.06
+temperature_max,57.24
+battery_avg,6.60360332330753
+battery_min,5.925
+solar_avg,4.036730190818993
+solar_max,11.578
+total_alertas,29337
+total_recomendaciones,80

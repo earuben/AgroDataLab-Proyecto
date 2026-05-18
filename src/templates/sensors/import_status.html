@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Importacion | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a class="active" href="{% url 'sensor_import' %}">Importacion</a>
+            <a href="{% url 'alert_list' %}">Alertas</a>
+            <a href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a href="{% url 'users' %}">Usuarios</a>
+            <a href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Fase 2</p>
+                <h1>Importacion EnviroPro</h1>
+                <p>Estado de carga del dataset principal limpio y combinado.</p>
+            </div>
+            <div class="user-chip">{{ request.user.username }}</div>
+        </header>
+
+        <section class="metric-grid" aria-label="Resumen de importacion">
+            <article class="metric-card aqua">
+                <span>Total registros</span>
+                <strong>{{ summary.total|default:0 }}</strong>
+                <small>Filas en base de datos</small>
+            </article>
+            <article class="metric-card green">
+                <span>Primera lectura</span>
+                <strong class="compact-value">{{ summary.first_reading|date:"d/m/Y H:i"|default:"Pendiente" }}</strong>
+                <small>Inicio de serie</small>
+            </article>
+            <article class="metric-card amber">
+                <span>Ultima lectura</span>
+                <strong class="compact-value">{{ summary.last_reading|date:"d/m/Y H:i"|default:"Pendiente" }}</strong>
+                <small>Fin de serie</small>
+            </article>
+            <article class="metric-card blue">
+                <span>Panel solar medio</span>
+                <strong>{{ summary.solar_avg|floatformat:2|default:"Pendiente" }} V</strong>
+                <small>Promedio registrado</small>
+            </article>
+        </section>
+
+        <section class="control-grid">
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Comando de carga</h2>
+                    <span>Repetible</span>
+                </div>
+                <p class="panel-copy">CSV configurado: <code>{{ csv_path }}</code></p>
+                <code class="command-box">{{ import_command }}</code>
+                <p class="panel-copy">
+                    El importador actualiza lecturas existentes por fecha y crea las nuevas, por eso se puede ejecutar mas de una vez.
+                </p>
+            </article>
+
+            <article class="control-panel">
+                <div class="panel-heading">
+                    <h2>Calculos guardados</h2>
+                    <span>Por lectura</span>
+                </div>
+                <ul class="status-list">
+                    <li>Humedad media, minima y maxima de sensores 1-8.</li>
+                    <li>Temperatura media, minima y maxima de sensores 1-8.</li>
+                    <li>Bateria y panel solar en mV y V.</li>
+                    <li>Archivo fuente original para trazabilidad.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="control-panel table-panel">
+            <div class="panel-heading">
+                <h2>Ultimas lecturas importadas</h2>
+                <span>{{ latest_records|length }} visibles</span>
+            </div>
+            <div class="data-table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Humedad media</th>
+                            <th>Temperatura media</th>
+                            <th>Bateria</th>
+                            <th>Panel solar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in latest_records %}
+                            <tr>
+                                <td>{{ record.fecha_hora|date:"d/m/Y H:i" }}</td>
+                                <td>{{ record.humedad_media|floatformat:2 }}%</td>
+                                <td>{{ record.temperatura_media|floatformat:2 }} C</td>
+                                <td>{{ record.bateria_v|floatformat:2 }} V</td>
+                                <td>{{ record.panel_solar_v|floatformat:2 }} V</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="5">Todavia no hay lecturas importadas.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}

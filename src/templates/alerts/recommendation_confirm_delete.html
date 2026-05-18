@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Eliminar recomendacion | AgroDataLab Web{% endblock %}
+
+{% block body %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-mark">ADL</span>
+            <div>
+                <strong>AgroDataLab</strong>
+                <small>EnviroPro Web</small>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'sensor_import' %}">Importacion</a>
+            <a href="{% url 'alert_list' %}">Alertas</a>
+            <a class="active" href="{% url 'recommendation_list' %}">Recomendaciones</a>
+            <a href="{% url 'users' %}">Usuarios</a>
+            <a href="{% url 'about' %}">Acerca</a>
+        </nav>
+        <form method="post" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesion</button>
+        </form>
+    </aside>
+
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">Confirmacion</p>
+                <h1>Eliminar recomendacion</h1>
+                <p>{{ recommendation.titulo }}</p>
+            </div>
+        </header>
+
+        <section class="control-panel form-panel">
+            <p class="panel-copy">Esta accion elimina el registro de recomendacion. No elimina alertas ni lecturas EnviroPro.</p>
+            <form method="post" class="delete-actions">
+                {% csrf_token %}
+                <a class="action-button ghost" href="{% url 'recommendation_list' %}">Cancelar</a>
+                <button class="action-button danger-button" type="submit">Eliminar</button>
+            </form>
+        </section>
+    </main>
+</div>
+{% endblock %}
