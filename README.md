@@ -129,13 +129,15 @@ Enfoque:
 ## Despliegue en PythonAnywhere
 
 1. Subir el repositorio a PythonAnywhere.
-2. Crear entorno virtual e instalar dependencias:
+2. Crear entorno virtual e instalar solo dependencias web:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-web.txt
 ```
+
+`requirements.txt` incluye dependencias pesadas para analisis y entrenamiento local (`pandas`, `matplotlib`, `scikit-learn`). En PythonAnywhere se usa `requirements-web.txt` para que el despliegue sea ligero. La importacion CSV de Django no necesita pandas.
 
 3. Crear `.env` basado en `.env.example`:
 
@@ -164,7 +166,10 @@ python manage.py collectstatic
 python manage.py createsuperuser
 python manage.py import_enviropro
 python manage.py generate_alerts
+python manage.py suggest_recommendations --limit 25
 ```
+
+El modelo predictivo y sus metricas ya estan incluidos en `src/ml/artifacts/`. Si PythonAnywhere no permite instalar dependencias cientificas, no ejecutar `train_dryness_model` en el servidor.
 
 URL publica: PENDIENTE.
 

@@ -194,8 +194,10 @@ git clone URL_DEL_REPOSITORIO
 cd agrodatalab_minimo
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-web.txt
 ```
+
+Para PythonAnywhere se usa `requirements-web.txt`, que instala solo lo necesario para servir Django. El archivo `requirements.txt` queda para desarrollo local, analisis, notebook y entrenamiento del modelo.
 
 Crear `.env` en PythonAnywhere:
 
@@ -221,9 +223,10 @@ python manage.py createsuperuser
 python manage.py import_enviropro
 python manage.py generate_alerts
 python manage.py suggest_recommendations --limit 25
-python manage.py train_dryness_model
 python manage.py export_results
 ```
+
+No ejecutar `train_dryness_model` en PythonAnywhere si falla la instalacion de dependencias cientificas. El modelo ya se entrega generado en `src/ml/artifacts/`.
 
 ## 8. Configuracion Web en PythonAnywhere
 
